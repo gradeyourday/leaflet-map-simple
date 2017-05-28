@@ -30,8 +30,8 @@
   /* Set up the map with initial center and zoom level */
   var map = L.map('map', {
     center: [41.77, -72.69], // EDIT latitude, longitude to re-center map
-    zoom: 18,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
-    scrollWheelZoom: true
+    zoom: 8,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
+    scrollWheelZoom: false
   });
 
   /* Control panel to display map layers */
@@ -49,7 +49,7 @@
   /* Stamen colored terrain basemap tiles with labels */
   var terrain = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
-  }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
+  }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   // controlLayers.addBaseLayer(terrain, 'Stamen Terrain basemap');
 
   /* Display a blue point marker with pop-up text */
